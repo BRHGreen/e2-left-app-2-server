@@ -17,8 +17,8 @@ export default {
     allUsers: (parent, args, { models }) => models.User.findAll(),
   },
   Mutation: {
-    updateUser: (parent, args, { username, newUsername }, { models }) =>
-      models.User.update({ username: newUsername }, { where: { username } }),
+    updateUser: (parent, { id, newUsername }, { models }) =>
+      models.User.update({ username: newUsername }, { where: { id } }),
     deleteUser: (parent, args, { models }) =>
       models.User.destroy({ where: args }),
     login: (parent, { email, password }, { models, SECRET, SECRET2 }) =>
