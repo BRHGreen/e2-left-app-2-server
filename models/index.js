@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize(
-  'auth_template',
+  'e2_left_app_2',
   'test_username_1',
   'test_password_1',
   {

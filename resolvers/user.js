@@ -15,7 +15,7 @@ export default {
       models.User.destroy({ where: args }),
     login: (parent, { email, password }, { models, SECRET, SECRET2 }) =>
       tryLogin(email, password, models, SECRET, SECRET2),
-    register: async (parent, { password, ...otherArgs }, { models, SECRET, SECRET2 }) => {
+    register: async (parent, { password, ...otherArgs }, { models }) => {
       try {
         if (password.length < 5 || password.length > 100) {
           return {
@@ -32,8 +32,6 @@ export default {
         const user = await models.User.create({ ...otherArgs, password: hashedPassword });
         return {
           ok: true,
-          token,
-          refreshToken,
           user,
         };
       } catch (err) {
