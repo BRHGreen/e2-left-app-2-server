@@ -18,5 +18,12 @@ type Mutation {
         interests: String,
         bio: String,
     ): UserProfileResponse!,
+    updateUserProfile(
+        id: Int!
+        newAge: Int,
+        newOccupation: String,
+        newInterests: String,
+        newBio: String,
+    ): [Int!]
 }
 `;

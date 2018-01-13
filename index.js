@@ -72,4 +72,4 @@ app.use(
   }),
 );
 
-models.sequelize.sync({ force: true }).then(() => app.listen(3000));
+models.sequelize.sync({ }).then(() => app.listen(3000));
