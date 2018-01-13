@@ -1,9 +1,17 @@
 import bcrypt from 'bcrypt'
 import formatErrors from '../formatErrors';
-import { tryLogin, createTokens } from '../auth';
+import { tryLogin } from '../auth';
 import requiresAuth from '../permissions';
 
 export default {
+  User: {
+    userProfile: ({ id }, args, { models }) =>
+      models.UserProfile.findOne({
+        where: {
+          owner: id,
+        },
+      }),
+  },
   Query: {
     getUser: requiresAuth.createResolver((parent, args, { models, user }) => models.User.findOne({ where: { id: user.id } })),
     allUsers: (parent, args, { models }) => models.User.findAll(),

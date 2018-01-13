@@ -5,6 +5,7 @@ type User {
   email: String
   createdAt: String!
   updatedAt: String!
+  userProfile: UserProfile  
 }
 
 type Query {
@@ -33,5 +34,4 @@ type Mutation {
   register(username: String!, email: String!, password: String!): RegisterResponse!
   login(email: String!, password: String!): LoginResponse!
 }
-
 `;

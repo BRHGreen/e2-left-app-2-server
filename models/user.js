@@ -25,8 +25,13 @@ export default (sequelize, DataTypes) => {
       },
     },
     password: DataTypes.STRING,
-});
+  });
 
+  User.associate = (models) => {
+    User.hasOne(models.UserProfile, {
+      foreignKey: 'owner',
+    });
+  };
 
   return User;
 };
