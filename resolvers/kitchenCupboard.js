@@ -6,13 +6,13 @@ export default {
 
     getCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll(),
     
-    getmainlandWestCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
+    getMainlandWestCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
       where: {
         landMass: 'mainlandWest'
       }
     }),
 
-    getmainlandEastCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
+    getMainlandEastCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
       where: {
         landMass: 'mainlandEast'
       }
