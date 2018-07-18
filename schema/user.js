@@ -5,7 +5,7 @@ type User {
   email: String
   createdAt: String!
   updatedAt: String!
-  userProfile: UserProfile  
+  userProfile: UserProfile
   kitchenCupboard: KitchenCupboard
 }
 
