@@ -30,7 +30,10 @@ export default (sequelize, DataTypes) => {
   User.associate = (models) => {
     User.hasOne(models.UserProfile, {
       foreignKey: 'owner',
-    });
+    })
+    User.hasMany(models.KitchenCupboard, {
+      foreignKey: 'owner',
+    })
   };
 
   return User;

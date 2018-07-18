@@ -1,16 +1,28 @@
 export default `
-type kitchenCupboards {
+type KitchenCupboard {
   landMass: String!
   cupboardNumber: Int!
 }
 
+type KitchenCupboardResponse {
+    ok: Boolean!
+    errors: [Error!]
+}
+
 type Query {
-  getCupboards: [kitchenCupboards!]
+  getCupboards: [KitchenCupboard!]
 }
 type Query {
-  getMainlandWestCupboards: [kitchenCupboards!]
+  getMainlandWestCupboards: [KitchenCupboard!]
 }
 type Query {
-  getMainlandEastCupboards: [kitchenCupboards!]
+  getMainlandEastCupboards: [KitchenCupboard!]
+}
+
+type Mutation {
+  updateKitchenCupboard(
+    id: Int!
+    owner: Int!
+  ): [Int!]
 }
 `;

@@ -18,4 +18,13 @@ export default {
       }
     })
   },
+
+  Mutation: {
+    updateKitchenCupboard: (parent, {
+      id,
+      newOwner
+    }, { models }) => models.KitchenCupboard.update({
+      owner: newOwner
+    }, { where: { id } }),
+  }
 };

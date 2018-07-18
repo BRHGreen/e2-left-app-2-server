@@ -6,6 +6,7 @@ type User {
   createdAt: String!
   updatedAt: String!
   userProfile: UserProfile  
+  kitchenCupboard: KitchenCupboard
 }
 
 type Query {

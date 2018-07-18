@@ -11,6 +11,12 @@ export default {
           owner: id,
         },
       }),
+    kitchenCupboard: ({ id }, args, { models }) =>
+      models.KitchenCupboard.findAll({
+        where: {
+          owner: id,
+        },
+      }),
   },
   Query: {
     getUser: requiresAuth.createResolver((parent, args, { models, user }) => models.User.findOne({ where: { id: user.id } })),
