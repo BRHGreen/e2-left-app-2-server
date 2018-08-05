@@ -11,13 +11,12 @@ export default {
           owner: id,
         },
       }),
-    kitchenCupboard: (parent, args, { models }) => {
-      return models.KitchenCupboard.findAll({
+    kitchenCupboard: ({ id }, args, { models }) => 
+      models.KitchenCupboard.findAll({
         where: {
-          owner: parent.id,
+          owner: id,
         },
-      })
-    }
+      }),
   },
   Query: {
     getUser: requiresAuth.createResolver((parent, args, { models, user }) => models.User.findOne({ where: { id: user.id } })),

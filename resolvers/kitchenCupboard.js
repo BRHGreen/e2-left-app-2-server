@@ -1,21 +1,27 @@
 // import formatErrors from '../formatErrors';
 // import requiresAuth from '../permissions';
+import sequelize from 'sequelize'
 
 export default {
   Query: {
 
-    getCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll(),
+    getCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
+      order: sequelize.col('cupboardNumber')
+    }
+    ),
     
     getMainlandWestCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
+      order: sequelize.col('cupboardNumber'),
       where: {
         landMass: 'mainlandWest'
       }
     }),
 
     getMainlandEastCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
+      order: sequelize.col('cupboardNumber'),
       where: {
         landMass: 'mainlandEast'
-      }
+      } 
     })
   },
 
