@@ -1,8 +1,14 @@
 export default (sequelize, DataTypes) => {
   const KitchenCupboard = sequelize.define('kitchenCupboard', {
     landMass: DataTypes.STRING,
-    cupboardNumber: DataTypes.INTEGER,
-    shelfNumber: DataTypes.FLOAT,
+    cupboardNumber: DataTypes.FLOAT,
   });
+
+  KitchenCupboard.associate = (models) => {
+    KitchenCupboard.belongsTo(models.User, {
+      foreignKey: 'owner',
+    }
+  )
+}
   return KitchenCupboard;
 };

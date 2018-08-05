@@ -3,6 +3,18 @@
 import sequelize from 'sequelize'
 
 export default {
+
+KitchenCupboard: {
+  user: (parnet, args, { models }) => {
+    console.log('parnet>>>>', parnet)
+    models.UserProfile.findOne({
+      where: {
+        owner: parnet.id,
+      },
+    })
+  }
+  },
+  
   Query: {
 
     getCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
