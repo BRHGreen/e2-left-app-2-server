@@ -12,7 +12,7 @@ type KitchenCupboardResponse {
 }
 
 type Query {
-  getCupboards: [KitchenCupboard!]
+  getCupboards: [KitchenCupboard!]  
 }
 type Query {
   getMainlandWestCupboards: [KitchenCupboard!]

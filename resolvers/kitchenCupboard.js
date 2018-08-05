@@ -6,10 +6,10 @@ export default {
 
 KitchenCupboard: {
   user: (parnet, args, { models }) => {
-    console.log('parnet>>>>', parnet)
-    models.UserProfile.findOne({
+    
+    return models.User.findOne({
       where: {
-        owner: parnet.id,
+        id: parnet.owner,
       },
     })
   }
