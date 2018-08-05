@@ -1,7 +1,8 @@
 export default `
 type KitchenCupboard {
-  landMass: String!
-  cupboardNumber: Int!
+  landMass: String
+  owner: Int
+  cupboardNumber: Int
 }
 
 type KitchenCupboardResponse {
