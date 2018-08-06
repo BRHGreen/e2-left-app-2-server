@@ -24,7 +24,7 @@ type Query {
 type Mutation {
   updateKitchenCupboard(
     id: Int!
-    owner: Int!
+    newOwner: Int!
   ): [Int!]
 }
 `;

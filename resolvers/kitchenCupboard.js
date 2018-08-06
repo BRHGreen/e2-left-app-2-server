@@ -5,18 +5,16 @@ import sequelize from 'sequelize'
 export default {
 
 KitchenCupboard: {
-  user: (parnet, args, { models }) => {
-    
+  user: ({ owner }, args, { models }) => {
     return models.User.findOne({
       where: {
-        id: parnet.owner,
+        id: owner,
       },
     })
   }
   },
   
   Query: {
-
     getCupboards: (parent, args, { models }) => models.KitchenCupboard.findAll({
       order: sequelize.col('cupboardNumber')
     }
