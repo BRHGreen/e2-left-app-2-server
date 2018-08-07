@@ -1,5 +1,6 @@
 export default `
 type KitchenCupboard {
+  id: Int
   landMass: String!
   owner: Int
   cupboardNumber: Float!
@@ -12,7 +13,7 @@ type KitchenCupboardResponse {
 }
 
 type Query {
-  getCupboards: [KitchenCupboard!]  
+  getCupboards: [KitchenCupboard!]
 }
 type Query {
   getMainlandWestCupboards: [KitchenCupboard!]
@@ -24,7 +25,7 @@ type Query {
 type Mutation {
   updateKitchenCupboard(
     id: Int!
-    newOwner: Int!
+    owner: Int!
   ): [Int!]
 }
 `;
