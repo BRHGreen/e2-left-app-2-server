@@ -1,7 +1,7 @@
 export default `
 type User {
   id: Int!
-  username: String!
+  username: String
   email: String
   createdAt: String!
   updatedAt: String!

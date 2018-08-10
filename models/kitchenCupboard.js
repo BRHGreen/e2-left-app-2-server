@@ -7,8 +7,8 @@ export default (sequelize, DataTypes) => {
   KitchenCupboard.associate = (models) => {
     KitchenCupboard.belongsTo(models.User, {
       foreignKey: 'id',
-    }
-  )
-}
+    })
+  };
+  
   return KitchenCupboard;
 };

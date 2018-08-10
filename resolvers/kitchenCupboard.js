@@ -36,11 +36,12 @@ KitchenCupboard: {
   },
 
   Mutation: {
-    updateKitchenCupboard: (parent, {
-      id,
-      newOwner
-    }, { models }) => models.KitchenCupboard.update({
-      owner: newOwner
-    }, { where: { id } }),
-  }
+    updateKitchenCupboard: (parent, { id, owner }, { models }) => {
+      console.log('id', id)
+      console.log('owner', owner)
+      return models.KitchenCupboard.update(
+      { owner },
+      { where: { id } })
+    }
+    }
 };

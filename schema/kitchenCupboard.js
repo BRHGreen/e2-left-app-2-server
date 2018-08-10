@@ -26,6 +26,6 @@ type Mutation {
   updateKitchenCupboard(
     id: Int!
     owner: Int!
-  ): [Int!]
+  ): [Int!]!
 }
 `;
