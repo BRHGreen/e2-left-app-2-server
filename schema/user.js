@@ -30,7 +30,9 @@ type LoginResponse {
 }
 
 type Mutation {
-  updateUser(id: Int!, newUsername: String): [Int!]!
+  updateUser(id: Int!,
+    newUsername: String
+  ): [Int!]!
   deleteUser(username: String!): Int!
   register(username: String!, email: String!, password: String!): RegisterResponse!
   login(email: String!, password: String!): LoginResponse!
