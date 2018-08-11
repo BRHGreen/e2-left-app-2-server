@@ -1,7 +1,6 @@
 export default `
 type KitchenCupboard {
   id: Int
-  landMass: String!
   owner: Int
   cupboardNumber: Float!
   user: User
