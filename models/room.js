@@ -1,6 +1,7 @@
 export default (sequelize, DataTypes) => {
   const Room = sequelize.define('room', {
     roomNumber: DataTypes.INTEGER,
+    floor: DataTypes.INTEGER,
   });
 
   Room.associate = (models) => {
