@@ -17,6 +17,12 @@ export default {
           owner: id,
         },
       }),
+    room: ({ id }, args, { models }) =>
+      models.Room.findAll({
+        where: {
+          owner: id,
+        },
+      }),
   },
   Query: {
     getUser: requiresAuth.createResolver((parent, args, { models, user }) => models.User.findOne({ where: { id: user.id } })),

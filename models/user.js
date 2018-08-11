@@ -34,6 +34,9 @@ export default (sequelize, DataTypes) => {
     User.hasMany(models.KitchenCupboard, {
       foreignKey: 'owner',
     })
+    User.hasMany(models.Room, {
+      foreignKey: 'owner',
+    })
   };
 
   return User;

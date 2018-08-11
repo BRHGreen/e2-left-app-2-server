@@ -1,12 +1,13 @@
 export default `
-type Room {
+type room {
   id: Int
   owner: Int
   roomNumber: Int!
+  user: User
 }
 
 type Query {
-  getRooms: [Room!]
+  getRooms: [room!]
 }
 
 `;

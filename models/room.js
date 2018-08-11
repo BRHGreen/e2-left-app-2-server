@@ -3,11 +3,11 @@ export default (sequelize, DataTypes) => {
     roomNumber: DataTypes.INTEGER,
   });
 
-  // Room.associate = (models) => {
-  //   Room.belongsTo(models.User, {
-  //     foreignKey: 'id',
-  //   })
-  // };
+  Room.associate = (models) => {
+    Room.belongsTo(models.User, {
+      foreignKey: 'id',
+    })
+  };
 
   return Room;
 };
