@@ -18,4 +18,10 @@ type Query {
   getGroundFloor: [Room!]
 }
 
+type Mutation {
+  updateRoom(
+    id: Int!
+    owner: Int!
+  ): [Int!]!
+}
 `;

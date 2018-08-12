@@ -24,4 +24,15 @@ Room: {
       }
     })
   },
+
+  Mutation: {
+    updateRoom: (parent, { id, owner }, { models }) => {
+      
+      return (
+        models.Room.update(
+          { owner },
+          { where: { id } })
+      )
+    }
+  }
 };
