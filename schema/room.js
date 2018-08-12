@@ -14,5 +14,8 @@ type Query {
 type Query {
   getTopFloor: [room!]
 }
+type Query {
+  getGroundFloor: [room!]
+}
 
 `;

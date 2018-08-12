@@ -13,6 +13,12 @@ export default {
       where: {
         floor: 1
       }
+    }),
+    getGroundFloor: (parent, args, { models }) => models.Room.findAll({
+      order: sequelize.col('roomNumber'),
+      where: {
+        floor: 0
+      }
     })
   },
 };
