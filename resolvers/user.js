@@ -17,7 +17,7 @@ export default {
           owner: id,
         },
       }),
-    room: ({ id }, args, { models }) =>
+    Room: ({ id }, args, { models }) =>
       models.Room.findAll({
         where: {
           owner: id,

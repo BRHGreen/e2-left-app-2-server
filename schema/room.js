@@ -1,5 +1,5 @@
 export default `
-type room {
+type Room {
   id: Int
   owner: Int
   roomNumber: Int!
@@ -8,14 +8,14 @@ type room {
 }
 
 type Query {
-  getRooms: [room!]
+  getRooms: [Room!]
 }
 
 type Query {
-  getTopFloor: [room!]
+  getTopFloor: [Room!]
 }
 type Query {
-  getGroundFloor: [room!]
+  getGroundFloor: [Room!]
 }
 
 `;

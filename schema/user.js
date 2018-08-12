@@ -7,7 +7,7 @@ type User {
   updatedAt: String!
   userProfile: UserProfile
   kitchenCupboard: [KitchenCupboard]
-  room: [room]
+  Room: [Room]
 }
 
 type Query {
