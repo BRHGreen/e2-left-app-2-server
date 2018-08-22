@@ -19,6 +19,7 @@ const db = {
   UserProfile: sequelize.import('./userProfile'),
   KitchenCupboard: sequelize.import('./kitchenCupboard'),
   Room: sequelize.import('./room'),
+  Utility: sequelize.import('./utility'),
 };
 
 Object.keys(db).forEach((modelName) => {
