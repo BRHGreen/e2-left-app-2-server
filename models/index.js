@@ -20,6 +20,7 @@ const db = {
   KitchenCupboard: sequelize.import('./kitchenCupboard'),
   Room: sequelize.import('./room'),
   Utility: sequelize.import('./utility'),
+  KittyStatement: sequelize.import('./kittyStatement'),
 };
 
 Object.keys(db).forEach((modelName) => {
