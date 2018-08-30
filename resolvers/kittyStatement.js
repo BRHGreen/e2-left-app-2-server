@@ -1,5 +1,19 @@
-import KittyStatement from '../models/KittyStatement'
+import formatErrors from '../formatErrors';
 
-import '/Users/Mac/Development/e2-left-app-2/statements/StarlingStatement_July-2018.csv';
-
-console.log('bleep', input)
+export default {
+  Mutation: {
+    createKittyStatement: async (parent, args, { models }) => {
+      try {
+        await models.KittyStatement.create({...args})
+        return {
+          ok: true
+        }
+      } catch (err) {
+        return {
+          ok: false,
+          errors: formatErrors(err, models),
+        };
+      }
+    }
+  }
+}
