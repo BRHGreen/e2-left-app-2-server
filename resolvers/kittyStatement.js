@@ -1,6 +1,9 @@
 import formatErrors from '../formatErrors';
 
 export default {
+  Query: {
+    getAllKittyStatements: (parent, args, { models }) => models.KittyStatement.findAll()
+  },
   Mutation: {
     createKittyStatement: async (parent, args, { models }) => {
       try {

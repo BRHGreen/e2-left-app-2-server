@@ -24,4 +24,9 @@ type Mutation {
       openingBalance: Float,
     ): KittyStatementResponse!,
 }
+
+type Query {
+  getAllKittyStatements: [KittyStatement!]
+}
 `;
+
