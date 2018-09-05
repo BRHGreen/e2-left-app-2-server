@@ -1,8 +1,11 @@
 import formatErrors from '../formatErrors';
+import sequelize from 'sequelize'
 
 export default {
   Query: {
-    getAllKittyStatements: (parent, args, { models }) => models.KittyStatement.findAll()
+    getAllKittyStatements: (parent, args, { models }) => models.KittyStatement.findAll({
+      order: [['date', 'DESC']]
+    })
   },
   Mutation: {
     createKittyStatement: async (parent, args, { models }) => {

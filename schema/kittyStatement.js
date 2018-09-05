@@ -24,9 +24,11 @@ type Mutation {
       openingBalance: Float,
     ): KittyStatementResponse!,
 }
-
+enum date {
+  date
+}
 type Query {
-  getAllKittyStatements: [KittyStatement!]
+  getAllKittyStatements(orderBy: date): [KittyStatement!]
 }
 `;
 

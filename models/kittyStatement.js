@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const KittyStatement = sequelize.define('kittyStatement', {
-    date: DataTypes.STRING,
+    date: DataTypes.DATE,
     counterParty: DataTypes.STRING,
     reference: DataTypes.STRING,
     type: DataTypes.STRING,
