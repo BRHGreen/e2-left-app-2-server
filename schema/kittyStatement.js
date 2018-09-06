@@ -8,6 +8,7 @@ type KittyStatement {
     amount: Float,
     balance: Float,
     openingBalance: Float,
+    month: String,
 }
 type KittyStatementResponse {
     ok: Boolean!
@@ -22,13 +23,16 @@ type Mutation {
       amount: Float,
       balance: Float,
       openingBalance: Float,
+      month: String,
     ): KittyStatementResponse!,
 }
-enum date {
-  date
-}
+
 type Query {
-  getAllKittyStatements(orderBy: date): [KittyStatement!]
+  getAllKittyStatements: [KittyStatement!]
+}
+
+type Query {
+  getKittyStatementsByMonth(month: String!): [KittyStatement!]
 }
 `;
 

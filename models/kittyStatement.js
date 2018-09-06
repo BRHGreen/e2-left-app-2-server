@@ -7,6 +7,7 @@ export default (sequelize, DataTypes) => {
     amount: DataTypes.FLOAT,
     balance: DataTypes.FLOAT,
     openingBalance: DataTypes.FLOAT,
+    month: DataTypes.STRING
   });
 
   return KittyStatement;

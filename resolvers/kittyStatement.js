@@ -5,6 +5,10 @@ export default {
   Query: {
     getAllKittyStatements: (parent, args, { models }) => models.KittyStatement.findAll({
       order: [['date', 'DESC']]
+    }),
+    getKittyStatementsByMonth: (parent, args, { models }) => models.KittyStatement.findAll({
+      where: { month: args.month },
+      order: [['date', 'DESC']]
     })
   },
   Mutation: {
