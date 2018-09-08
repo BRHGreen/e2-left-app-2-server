@@ -6,10 +6,14 @@ export default {
     getAllKittyStatements: (parent, args, { models }) => models.KittyStatement.findAll({
       order: [['date', 'DESC']]
     }),
-    getKittyStatementsByMonth: (parent, args, { models }) => models.KittyStatement.findAll({
+    getKittyStatementsByMonth: (parent, args, { models }) => {
+      console.log('**************parent', parent)
+      console.log('>>>>>>>>>>>>>>args', args)
+      return models.KittyStatement.findAll({
       where: { month: args.month },
       order: [['date', 'DESC']]
     })
+    }
   },
   Mutation: {
     createKittyStatement: async (parent, args, { models }) => {
